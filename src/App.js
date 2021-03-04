@@ -5,16 +5,16 @@ import React, { useState, useEffect } from 'react'
 import { Wheel } from 'react-custom-roulette';
 
 const data = [
-    { option: '1 Sub pro Chat', style: { backgroundColor: 'blue', textColor: 'white' } },
-    { option: '1 Sub para Você', style: { backgroundColor: 'blue', textColor: 'white' } },
-    { option: '3k no CoW', style: { backgroundColor: 'blue', textColor: 'white' } },
-    { option: '1 Sub pro Chat', style: { backgroundColor: 'blue', textColor: 'white' } },
-    { option: '1k no CoW', style: { backgroundColor: 'blue', textColor: 'white' } },
-    { option: '2k no CoW', style: { backgroundColor: 'blue', textColor: 'white' } },
-    { option: '1k no CoW', style: { backgroundColor: 'blue', textColor: 'white' } },
-    { option: '1 Sub pro Chat', style: { backgroundColor: 'blue', textColor: 'white' } },
-    { option: '5k no CoW', style: { backgroundColor: 'blue', textColor: 'white' } },
-    { option: '1 Sub para Você', style: { backgroundColor: 'blue', textColor: 'white' } }
+    { option: 'F', style: { backgroundColor: '#262423', textColor: 'white' } },
+    { option: '1 Sub pro Chat', style: { backgroundColor: '#DB1F47', textColor: 'white' } },
+    { option: '1 Sub para Você', style: { backgroundColor: '#D89A43', textColor: 'white' } },
+    { option: '3k no CoW', style: { backgroundColor: '#2F3470', textColor: 'white' } },
+    { option: '1 Sub pro Chat', style: { backgroundColor: '#DB1F47', textColor: 'white' } },
+    { option: 'F', style: { backgroundColor: '#262423', textColor: 'white' } },
+    { option: '1k no CoW', style: { backgroundColor: '#2A3A59', textColor: 'white' } },
+    { option: '1 Sub pro Chat', style: { backgroundColor: '#DB1F47', textColor: 'white' } },
+    { option: '2k no CoW', style: { backgroundColor: '#2F5670', textColor: 'white' } },
+    { option: '1 Sub para Você', style: { backgroundColor: '#D89A43', textColor: 'white' } }
 ]
 
 function App() {
@@ -43,6 +43,8 @@ function App() {
                         textColors={['#ffffff']}
                         outerBorderColor={['#ffffff']}
                         outerBorderWidth={3}
+                        radiusLineColor={['#ffffff']}
+                        radiusLineWidth={3}
                         onStopSpinning={() => {
                             setMustSpin(false);
                             setMostrarResultado(true);
