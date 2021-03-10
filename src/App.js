@@ -1,8 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap';
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { Wheel } from 'react-custom-roulette';
+import useSound from 'use-sound';
+
+import ahn from './sounds/ahn.mp3';
 
 const data = [
     { option: 'F', style: { backgroundColor: '#262423', textColor: 'white' } },
@@ -22,6 +25,8 @@ function App() {
     const [prizeNumber, setPrizeNumber] = useState(0);
     const [mostrarResultado, setMostrarResultado] = useState(false);
 
+    const [play] = useSound(ahn, {interrupt: true, volume: 0.3});
+
     useEffect(() => { document.body.style.backgroundColor = '#141414' }, [])
 
     function girar() {
@@ -29,6 +34,14 @@ function App() {
         setPrizeNumber(newPrizeNumber);
         setMustSpin(true);
         setMostrarResultado(false);
+    }
+
+    function playSound(id) {
+        switch (id) {
+            default:
+                play();
+            break;
+        }
     }
     
     return (
@@ -48,6 +61,7 @@ function App() {
                         onStopSpinning={() => {
                             setMustSpin(false);
                             setMostrarResultado(true);
+                            playSound(prizeNumber);
                         }}
                     />
                 </div>
